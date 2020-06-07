@@ -1,4 +1,15 @@
-#page-create-point {
+body::after {
+    content: "";
+    position: fixed;
+    background: white;
+    top: 260px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+#page-search-results {
     width: 90%;
     max-width: 1100px;
 
@@ -8,7 +19,7 @@
     margin: 0 auto;
 }
 
-#page-create-point header {
+#page-search-results header {
     margin-top: 48px;
 
     display: flex;
@@ -17,7 +28,7 @@
     align-items: center;
 }
 
-#page-create-point header a {
+#page-search-results header a {
     color: var(--title-color);
     font-weight: bold;
 
@@ -26,7 +37,7 @@
 
 }
 
-#page-create-point header a span {
+#page-search-results header a span {
     margin-right: 16px;
     background-image: url(../assets/arrow-left.svg);
 
@@ -128,49 +139,56 @@ form button:hover {
     background-color: #2fb86e;
 }
 
-.items-grid {
+main {
+    margin: 48px;
+}
+
+main h4 {
+    font-weight: normal;
+    font-family: Roboto, sans-serif;
+
+    margin-bottom: 32px;
+}
+
+main .cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 16px;
+
+    gap: 24px;
 }
 
-.items-grid li {
-    background-color: #f5f5f5;
-    list-style: none;
+main .card img {
+    width: 100%;
+    height: 150px;
 
-    border: 2px solid #f0f0f5;
-    border-radius: 8px;
+    object-fit: cover;
 
-    height: 180px;
-
-    padding: 32px 24px 16px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-
-    text-align: center;
-
-    cursor: pointer;
+    border-radius: 8px 8px 0 0;
 }
 
-.items-grid li span {
-    margin-top: 12px;
-    flex: 1;
+main .card h1 {
+    margin-top: 32px;
 
-    display: flex;
-    align-items: center;
-
-    color: var(--title-color);
+    font-size: 36px;
+    line-height: 41px;
+    color: #322153;
 }
 
-.items-grid li.selected {
-    background: #e1faec;
-    border: 2px solid #34cb79;
+main .card h3 {
+    margin: 24px 0;
+
+    font-family: Roboto;
+    font-weight: bold;
+
+    font-size: 24px;
+    line-height: 34px;
+    color: var(--primary-color);
 }
 
-.items-grid li img,
-.items-grid li span {
-    pointer-events: none;
+main .card p {
+    font-size: 16px;
+    line-height: 26px;
+
+    color: #6C6C80;
 }
+
